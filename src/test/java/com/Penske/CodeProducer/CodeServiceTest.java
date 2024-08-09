@@ -43,7 +43,6 @@ public class CodeServiceTest {
     private CodeService codeService;
 
     private CodeEntity codeEntity;
-    private CodeVersionDto codeVersionDto;
 
     @BeforeEach
     void setUp() {
@@ -55,11 +54,6 @@ public class CodeServiceTest {
         codeEntity.setName("Code Name 1");
         codeEntity.setVersion(1.0);
         codeEntity.setIsActive("FALSE");
-
-        // Initialize a CodeVersionDto object with default values
-        codeVersionDto = new CodeVersionDto();
-        codeVersionDto.setCode(codeEntity.getCode());
-        codeVersionDto.setVersion(codeEntity.getVersion());
     }
 
     @Test
