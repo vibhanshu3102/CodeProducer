@@ -5,7 +5,6 @@ import com.Penske.CodeProducer.Model.CodeEntity;
 import com.Penske.CodeProducer.Repository.CodeRepository;
 import com.Penske.CodeProducer.Service.CodeService;
 import com.mongodb.MongoWriteException;
-import dto.CodeVersionDto;
 import org.bson.Document;
 import org.bson.types.ObjectId;
 import org.junit.jupiter.api.BeforeEach;
@@ -17,7 +16,6 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.aggregation.Aggregation;
 import org.springframework.data.mongodb.core.aggregation.AggregationResults;
-import org.springframework.kafka.core.KafkaTemplate;
 
 import java.util.Collections;
 import java.util.List;
@@ -32,9 +30,6 @@ public class CodeServiceTest {
 
     @Mock
     private CodeRepository codeRepository;
-
-    @Mock
-    private KafkaTemplate<String, CodeVersionDto> kafkaTemplate;
 
     @Mock
     private MongoTemplate mongoTemplate;
