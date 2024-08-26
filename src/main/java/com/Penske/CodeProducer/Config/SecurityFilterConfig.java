@@ -22,7 +22,7 @@ public class SecurityFilterConfig {
                 .csrf(csrf -> csrf.disable()) // Disable CSRF protection
                 .cors(cors -> cors.disable()) // Disable CORS (configure as needed)
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/authenticate", "/api-docs" , "/swagger-ui-custom.html").permitAll() // Allow unauthenticated access to /authenticate and /api-docs
+                        .requestMatchers("/authenticate", "/api-docs/**", "/swagger-ui/**").permitAll() // Allow unauthenticated access to /authenticate and /api-docs
                         .requestMatchers("/sendCode").hasRole("ADMIN") // Require ADMIN role for /sendCode
                         .requestMatchers("/filterData", "/getcodeByLatestVersion").hasRole("USER") // Require USER role for /filterData and /getcodeByLatestVersion
                         .anyRequest().authenticated() // Require authentication for all other requests
