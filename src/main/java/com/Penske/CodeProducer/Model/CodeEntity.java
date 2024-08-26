@@ -21,4 +21,3 @@ public class CodeEntity {
         private double version;
         private String isActive = "FALSE";
 }
-// index compound index
